@@ -1,0 +1,47 @@
+{
+	"cards": 
+	[
+		{ 
+		"name": "stealing_potions".
+		"type": "lose", 
+		"desc": "You were caught stealing polyjuice potion. Lose 10 House Points!", 
+		"amt": 10 
+		}, 
+		{ 
+		"name": "catch_snitch".
+		"type": "gain",
+		"desc": "You caught the Golden Snitch and won the big match! Gain 15 House Points!", 
+		"amt": 15 
+		}, 
+		{ 
+		"name": "caught_sneaking"
+		"type": "lose", 
+		"desc": "You were caught sneaking around after hours. Lose 10 House Points!", 
+		"amt": 10 
+		}, 
+		{ 
+		"name": "wingardium_leviosa".
+		"type": "gain", 
+		"desc": "You said "Wingardium Leviosa" right on your first try! Gain 10 House Points", 
+		"amt": 10 
+		}, 
+		{ 
+		"name": "go_to_jail".
+		"type": "jail", 
+		"desc": "Uh oh! You told a lie! You're going to detention with Umbridge.", 
+		"amt": 0 
+		}, 
+		{ 
+		"name": "get_out_of_jail".
+		"type": "free", 
+		"desc": "Professor Umbridge got kidnapped by Centaurs. Get out of detention!", 
+		"amt": 0 
+		}, 
+		{ 
+		"name": "free_house_elf".
+		"type": "gain", 
+		"desc": "You dropped a sock and it landed on a house elf. Gain 10 House Points!", 
+		"amt": 10 
+		}  
+	]
+}
