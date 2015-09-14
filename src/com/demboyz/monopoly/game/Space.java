@@ -1,5 +1,5 @@
 package com.demboyz.monopoly.game;
 
-public class Space {
+public abstract class Space {
 
 }
