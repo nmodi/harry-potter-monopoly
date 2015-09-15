@@ -12,36 +12,81 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class Board {
-	ArrayList<Space> spaces; 
-	ArrayList<Token> tokens; 
-	HashSet<Card> cards; 
-	
-	
+	private ArrayList<Space> spaces; 
+	private ArrayList<Token> tokens; 
+	private HashSet<Card> cards; 
+	public int TOTAL_NUM_OF_SPACES; 
+
+
 	public Board(){
 		initSpaces();
 		initCards(); 
 		initTokens(); 
 	}
-	
+
 	public void initSpaces(){
-		
-		
 		spaces = new ArrayList<Space>(); 
+
+		JSONParser parser = new JSONParser();
+
+		try {
+			Object obj = parser.parse(new FileReader(Game.SPACES_JSON));
+			JSONObject jsonObj = (JSONObject) obj;
+
+			JSONArray jsonSpaceArray = (JSONArray) jsonObj.get("spaces");
+
+			Iterator<JSONObject> iterator = jsonSpaceArray.iterator();
+
+			while(iterator.hasNext())
+			{				
+				JSONObject nextSpace = iterator.next();
+				String spaceType = nextSpace.get("type").toString(); 
+				switch(spaceType){
+				case "property":
+				case "rr":	
+				case "util": 	
+					spaces.add(new PropertySpace(nextSpace));
+					break; 
+				case "go":		
+					spaces.add(new GoSpace(nextSpace));
+					break; 
+				case "card":
+					spaces.add(new CardSpace(nextSpace));
+					break; 
+				case "jail":
+					spaces.add(new DetentionSpace(nextSpace));
+					break;
+				case "go_to_jail":
+					spaces.add(new GoToDetentionSpace(nextSpace));
+					break;
+				case "free_parking":
+					spaces.add(new RoomOfRequirementSpace(nextSpace));
+					break; 
+				default:
+					break; 
+				}
+			}
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		
+		TOTAL_NUM_OF_SPACES = spaces.size(); 
+
 	}
-	
+
 	public void initCards(){
 		cards = new HashSet<Card>(); 
-		
+
 		JSONParser parser = new JSONParser();
-		
+
 		try {
 			Object obj = parser.parse(new FileReader(Game.CARDS_JSON));
 			JSONObject jsonObj = (JSONObject) obj;
-			
+
 			JSONArray jsonCardArray = (JSONArray) jsonObj.get("cards");
-			
+
 			Iterator<JSONObject> iterator = jsonCardArray.iterator();
-			
+
 			while(iterator.hasNext())
 			{				
 				cards.add(new Card(iterator.next()));
@@ -49,13 +94,13 @@ public class Board {
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public void initTokens(){
 		tokens = new ArrayList<Token>(); 
 	}
-	
+
 	public ArrayList<Space> getSpaces(){ return spaces; }
 	public HashSet<Card> getCards(){ return cards; }
 	public ArrayList<Token> getTokens(){ return tokens; } 

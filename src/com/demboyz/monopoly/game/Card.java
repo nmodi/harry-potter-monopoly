@@ -15,8 +15,6 @@ public class Card {
 		setType(cardObject.get("type").toString());	
 		int value = (int) (long) cardObject.get("amt"); 
 		setPointValue(value); 
-		
-		System.out.println("New card: " + name + "\nDesc: " + desc);
 	}
 
 	public void setName(String name){ this.name = name; }

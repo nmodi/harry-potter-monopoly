@@ -30,7 +30,7 @@ public class HarryPotterMonopolyServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter();
 		PrintWriter out = response.getWriter(  ); 
 		response.setContentType("text/html"); 
 		out.println("<html><h1>Hello</h1>");

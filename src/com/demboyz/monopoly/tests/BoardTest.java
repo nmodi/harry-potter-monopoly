@@ -41,6 +41,11 @@ public class BoardTest {
 	public void testMultipleCardsInitialized(){
 		assertNotEquals(0, board.getCards().size());
 	}
+	
+	@Test 
+	public void testMultipleSpacesInitialized(){
+		assertNotEquals(0, board.getSpaces().size());
+	}
 
 	
 

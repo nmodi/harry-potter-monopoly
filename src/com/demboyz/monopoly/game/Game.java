@@ -14,7 +14,7 @@ import org.json.simple.parser.ParseException;
 public class Game {
 	static String PLAYERS_JSON = "players.json"; 
 	static String CARDS_JSON = "cards.json"; 
-	String SPACES_JSON = "spaces.json"; 
+	static String SPACES_JSON = "spaces.json"; 
 	
 	List<Player> players; 
 	Die die; 
