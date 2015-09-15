@@ -1,5 +1,6 @@
 package com.demboyz.monopoly.tests;
 
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.After;
@@ -36,6 +37,11 @@ public class BoardTest {
 		assertNotNull(board.getTokens()); 
 	}
 	
+	@Test 
+	public void testMultipleCardsInitialized(){
+		assertNotEquals(0, board.getCards().size());
+	}
+
 	
 
 }

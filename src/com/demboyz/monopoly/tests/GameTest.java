@@ -23,12 +23,14 @@ public class GameTest {
 	
 	@Test
 	public void testPlayersHaveNames() {
-		
-		
 		for (Player p : game.getPlayers()){
-			fail("this is where we left off"); 
-			// assertNotNull(p.getName()); 
+			assertNotNull(p.getName()); 
 		}
 	}
-
+	
+	@Test 
+	public void testGameHasADie() {
+		assertNotNull(game.getDie()); 
+	}
 }
+
