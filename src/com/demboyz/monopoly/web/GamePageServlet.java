@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 //@WebServlet("/HarryPotterMonopolyServlet")
-public class HarryPotterMonopolyServlet extends HttpServlet {
+public class GamePageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private int count; 
@@ -21,7 +21,7 @@ public class HarryPotterMonopolyServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public HarryPotterMonopolyServlet() {
+	public GamePageServlet() {
 		super();
 	}
 

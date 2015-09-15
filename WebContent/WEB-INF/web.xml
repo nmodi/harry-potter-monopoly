@@ -7,12 +7,12 @@
   
   <servlet>
     <servlet-name>HPServlet</servlet-name>
-    <servlet-class>com.demboyz.monopoly.web.HarryPotterMonopolyServlet</servlet-class>
+    <servlet-class>com.demboyz.monopoly.web.GamePageServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
     <servlet-name>HPServlet</servlet-name>
-    <url-pattern>/game</url-pattern>
+    <url-pattern>/play</url-pattern>
   </servlet-mapping>
   
   
