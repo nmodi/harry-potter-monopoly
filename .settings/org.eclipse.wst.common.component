@@ -2,7 +2,7 @@
     <wb-module deploy-name="HarryPotterMonopoly">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="HarryPotterMonopoly"/>
         <property name="java-output-path" value="/HarryPotterMonopoly/bin"/>
+        <property name="context-root" value="playhp"/>
     </wb-module>
 </project-modules>
