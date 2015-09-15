@@ -38,17 +38,15 @@ public class Board {
 			Object obj = parser.parse(new FileReader(Game.CARDS_JSON));
 			JSONObject jsonObj = (JSONObject) obj;
 			
-			JSONArray cards = (JSONArray) jsonObj.get("cards");
+			JSONArray jsonCardArray = (JSONArray) jsonObj.get("cards");
 			
-			Iterator<JSONObject> iterator = cards.iterator();
+			Iterator<JSONObject> iterator = jsonCardArray.iterator();
 			
 			while(iterator.hasNext())
-			{
+			{				
 				cards.add(new Card(iterator.next()));
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
+		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
 		

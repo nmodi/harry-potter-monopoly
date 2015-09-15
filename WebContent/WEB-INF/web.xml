@@ -9,12 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
-    <servlet-name>HarryPotterMonopoly</servlet-name>
-    <servlet-class>com.usaa.monopoly.web.HelloWorldServet</servlet-class>
+    <servlet-name>HPServlet</servlet-name>
+    <servlet-class>com.usaa.monopoly.web.HarryPotterMonopolyServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
-    <servlet-name>HarryPotterMonopoly</servlet-name>
+    <servlet-name>HPServlet</servlet-name>
     <url-pattern>/game</url-pattern>
   </servlet-mapping>
+  
+  
 </web-app>

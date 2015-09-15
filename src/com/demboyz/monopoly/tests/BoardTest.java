@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.demboyz.monopoly.game.Board;
 
 public class BoardTest {
-	Board board; 
+	Board board;
 	
 	@Before
 	public void setUp() throws Exception {
