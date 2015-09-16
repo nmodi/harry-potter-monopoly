@@ -24,6 +24,14 @@ public class MonopolyGame {
 		initPlayers(); 
 	}
 	
+	public MonopolyGame(String userHouse){
+		new MonopolyGame();
+		
+		// iterate through players 
+		// remove premade player with given house 
+		// add new player with same house 
+	}
+	
 	
 	
 	public void initPlayers(){
@@ -42,6 +50,9 @@ public class MonopolyGame {
 		}
 	}
 	
+	public String getTestString(){
+		return "this is a test string from the monopoly game!";
+	}
 	
 	
 	public List<Player> getPlayers(){ return players; } 

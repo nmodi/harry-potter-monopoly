@@ -33,8 +33,6 @@ public class ResultsPageServlet extends HttpServlet {
 		out.println("<html><h1>Hello this is the results page for Harry Potter Monopoly</h1>");
 		out.println("<p>Click here to go back to the home page: <a href=\"options.html\">GO</a>  </p> </html>");
 		out.flush(); 
-		out.close();
-		
 	}
 
 	/**

@@ -1,27 +1,36 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Game Options</title>
-	</head>
-	<body>
-		<h1>Game Options</h1>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello, world.</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	type="text/css">
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Game Options</h1>
+		</div>
+	</div>
+	<div class="container">
 		<form action="play">
-			House:<br>
-			<select name="house">
+			<label for="houseDropdown"> House: </label> <select name="house"
+				id="houseDropdown">
 				<option value="gryffindor">Gryffindor</option>
 				<option value="hufflepuff">Hufflepuff</option>
 				<option value="ravenclaw">Ravenclaw</option>
-				<option value="slytherin">Slytherin</option>		
-			</select>
-			<br>
-			Frequency of Game Updates:<br>
-			<select name="updateFrequency">
+				<option value="slytherin">Slytherin</option>
+			</select> <br> <label for="freqDropdown">Frequency of Game
+				Updates: </label> <select name="updateFrequency" id="freqDropdown">
 				<option value="5">5 seconds</option>
 				<option value="10">10 seconds</option>
 				<option value="20">20 seconds</option>
-				<option value="30">30 seconds</option>		
-			</select>
-			<br>
+				<option value="30">30 seconds</option>
+			</select> <br> <label for="name">Enter your name: </label> <input
+				type="text" name="playerName" maxlength="15" id="name"> <br>
 			<input type="submit" value="Play Game">
 		</form>
-	</body>
+	</div>
+</body>
 </html>
