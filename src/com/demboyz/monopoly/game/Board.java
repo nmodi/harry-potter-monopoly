@@ -16,6 +16,9 @@ public class Board {
 	private ArrayList<Token> tokens; 
 	private HashSet<Card> cards; 
 	public int TOTAL_NUM_OF_SPACES; 
+	public static int DETENTION_SPACE_INDEX;
+	public static int GO_SPACE_INDEX;
+	public static int ROOM_OF_REQUIREMENT_SPACE_INDEX;
 
 
 	public Board(){
@@ -52,18 +55,21 @@ public class Board {
 					break; 
 				case "go":		
 					spaces.add(new GoSpace(nextSpace));
+					GO_SPACE_INDEX = spaces.size() - 1;
 					break; 
 				case "card":
 					spaces.add(new CardSpace(nextSpace));
 					break; 
 				case "jail":
 					spaces.add(new DetentionSpace(nextSpace));
+					DETENTION_SPACE_INDEX = spaces.size() - 1;
 					break;
 				case "go_to_jail":
 					spaces.add(new GoToDetentionSpace(nextSpace));
 					break;
 				case "free_parking":
 					spaces.add(new RoomOfRequirementSpace(nextSpace));
+					ROOM_OF_REQUIREMENT_SPACE_INDEX = spaces.size() - 1;
 					break; 
 				default:
 					break; 

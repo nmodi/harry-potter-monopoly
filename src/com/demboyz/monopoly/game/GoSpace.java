@@ -12,6 +12,7 @@ public class GoSpace extends Space {
 
 	@Override
 	public boolean onLanding(Player player) {
+		//player.setCurrentSpaceIndex(0);
 		return false;
 	}
 
