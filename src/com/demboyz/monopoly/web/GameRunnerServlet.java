@@ -23,7 +23,7 @@ public class GameRunnerServlet extends HttpServlet {
     public void init() throws ServletException {
     	super.init();    	
 
-		game = new MonopolyGame();
+		// game = new MonopolyGame();
 }
 
 	/**
@@ -33,32 +33,33 @@ public class GameRunnerServlet extends HttpServlet {
 		PrintWriter out = response.getWriter(); 
 		response.setContentType("text/html"); 
 		
-		String sender = request.getAttribute("sender").toString(); 
+//		String sender = request.getAttribute("sender").toString(); 
 		
 		out.println("<p>before the if statement</p>");
 		
-		if (sender.equals("gamePageServlet")){
+//		if (sender.equals("gamePageServlet")){
 			
 			// verify that the game has been created
 			// start the game using parameters from request 
-//
-//			String userHouse = request.getAttribute("house").toString();
-//			String userName = request.getAttribute("playerName").toString(); 
-//			game = new MonopolyGame(userHouse); 
-			
-			
-			out.println("<p>in the 1st if statement</p>");
-			
-			request.setAttribute("returnString", game.getTestString());
-		} else if (sender.equals("feed.jsp")){
 
-			out.println("<p>in the 2nd if statement</p>");
-			// retrieve game.getGameState()
-			// send game state to feed.jsp 
-		}
-		
+			String clientHouse = (String) request.getParameter("house");
+			String clientName = (String) request.getParameter("playerName");
+			
+			
+			
+			
+			out.println("<p>" + clientName + " of House " + clientHouse + "</p>");
+			
+		//	request.setAttribute("returnString", game.getTestString());
+//		} else if (sender.equals("feed.jsp")){
+//
+//			out.println("<p>in the 2nd if statement</p>");
+//			// retrieve game.getGameState()
+//			// send game state to feed.jsp 
+//		}
+//		
 		out.println("<p>after the ifs</p>");
-		
+
 		out.flush();
 	}
 

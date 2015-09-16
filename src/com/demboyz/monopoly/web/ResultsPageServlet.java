@@ -14,25 +14,31 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ResultsPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-	
-    public ResultsPageServlet() {
-        super();
-
-    }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter(  ); 
 		response.setContentType("text/html"); 
-		out.println("<html><h1>Hello this is the results page for Harry Potter Monopoly</h1>");
-		out.println("<p>Click here to go back to the home page: <a href=\"options.html\">GO</a>  </p> </html>");
+		
+		getServletContext().getRequestDispatcher("/header_fragment.html").include(request, response);
+
+		
+		out.println("<h1>Results</h1>");
+		
+		/*
+		 * 
+		 * Results go here!
+		 * Maybe in a JSP or HTML fragment? 
+		 * 
+		 * 
+		 */
+		
+		out.println("<p>Click here to go back to the home page: <a href=\"..\\playhp\\\">GO</a>  </p> </html>");
+		
+		getServletContext().getRequestDispatcher("/footer_fragment.html").include(request, response);
 		out.flush(); 
+		out.close();
 	}
 
 	/**
