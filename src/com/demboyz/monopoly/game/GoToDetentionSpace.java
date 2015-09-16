@@ -11,6 +11,8 @@ public class GoToDetentionSpace extends Space {
 
 	@Override
 	public boolean onLanding(Player player) {
+		player.setDetentionStatus(true);
+		player.setCurrentSpaceIndex(Board.DETENTION_SPACE_INDEX);
 		return false;
 	}
 
