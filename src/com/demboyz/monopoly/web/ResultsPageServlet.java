@@ -12,17 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ResultsPageServlet
  */
-@WebServlet("/ResultsPageServlet")
 public class ResultsPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
     public ResultsPageServlet() {
         super();
-        
-        
+
     }
 
 	/**
@@ -32,7 +31,7 @@ public class ResultsPageServlet extends HttpServlet {
 		PrintWriter out = response.getWriter(  ); 
 		response.setContentType("text/html"); 
 		out.println("<html><h1>Hello this is the results page for Harry Potter Monopoly</h1>");
-		out.println("<p>Click here to go back to the home page: <a href=\"index.html\">GO</a>  </p> </html>");
+		out.println("<p>Click here to go back to the home page: <a href=\"options.html\">GO</a>  </p> </html>");
 		out.flush(); 
 		out.close();
 		

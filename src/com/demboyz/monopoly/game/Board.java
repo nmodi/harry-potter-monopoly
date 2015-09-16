@@ -30,7 +30,7 @@ public class Board {
 		JSONParser parser = new JSONParser();
 
 		try {
-			Object obj = parser.parse(new FileReader(Game.SPACES_JSON));
+			Object obj = parser.parse(new FileReader(MonopolyGame.SPACES_JSON));
 			JSONObject jsonObj = (JSONObject) obj;
 
 			JSONArray jsonSpaceArray = (JSONArray) jsonObj.get("spaces");
@@ -85,7 +85,7 @@ public class Board {
 		JSONParser parser = new JSONParser();
 
 		try {
-			Object obj = parser.parse(new FileReader(Game.CARDS_JSON));
+			Object obj = parser.parse(new FileReader(MonopolyGame.CARDS_JSON));
 			JSONObject jsonObj = (JSONObject) obj;
 
 			JSONArray jsonCardArray = (JSONArray) jsonObj.get("cards");

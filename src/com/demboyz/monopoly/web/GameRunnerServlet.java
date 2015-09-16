@@ -1,18 +1,20 @@
 package com.demboyz.monopoly.web;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.demboyz.monopoly.game.MonopolyGame;
+
 /**
  * Servlet implementation class GameRunnerServlet
  */
-@WebServlet("/GameRunnerServlet")
 public class GameRunnerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private MonopolyGame game; 
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -23,11 +25,18 @@ public class GameRunnerServlet extends HttpServlet {
         
     }
 
+    @Override
+    public void init() throws ServletException {
+    	super.init();
+    	
+    	game = new MonopolyGame(); 
+}
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**

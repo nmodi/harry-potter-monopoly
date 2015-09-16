@@ -11,7 +11,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class Game {
+public class MonopolyGame {
 	static String PLAYERS_JSON = "players.json"; 
 	static String CARDS_JSON = "cards.json"; 
 	static String SPACES_JSON = "spaces.json"; 
@@ -19,7 +19,7 @@ public class Game {
 	List<Player> players; 
 	Die die; 
 	
-	public Game(){
+	public MonopolyGame(){
 		die = new Die(); 
 		initPlayers(); 
 	}
@@ -34,7 +34,7 @@ public class Game {
 		players = new ArrayList<Player>(); 
 		JSONParser parser = new JSONParser(); 
 		try {
-			Object obj = parser.parse(new FileReader(Game.PLAYERS_JSON)); 
+			Object obj = parser.parse(new FileReader(MonopolyGame.PLAYERS_JSON)); 
 			JSONObject jsonObj = (JSONObject) obj; 
 			JSONArray jsonPlayers = (JSONArray) jsonObj.get("players"); 
 			Iterator<JSONObject> iterator = jsonPlayers.iterator(); 
