@@ -24,6 +24,12 @@ public class Game {
 		initPlayers(); 
 	}
 	
+	
+	public static void main(){
+		
+	}
+	
+	
 	public void initPlayers(){
 		players = new ArrayList<Player>(); 
 		JSONParser parser = new JSONParser(); 

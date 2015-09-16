@@ -37,6 +37,7 @@ public class Board {
 
 			Iterator<JSONObject> iterator = jsonSpaceArray.iterator();
 
+			int propertySpaceCount = 0; 
 			while(iterator.hasNext())
 			{				
 				JSONObject nextSpace = iterator.next();
@@ -45,7 +46,9 @@ public class Board {
 				case "property":
 				case "rr":	
 				case "util": 	
-					spaces.add(new PropertySpace(nextSpace));
+					PropertySpace tempSpace = new PropertySpace(nextSpace);									
+					tempSpace.setBaseRent(++propertySpaceCount); 
+					spaces.add(tempSpace);
 					break; 
 				case "go":		
 					spaces.add(new GoSpace(nextSpace));
@@ -71,6 +74,8 @@ public class Board {
 		}
 		
 		TOTAL_NUM_OF_SPACES = spaces.size(); 
+		
+		
 
 	}
 

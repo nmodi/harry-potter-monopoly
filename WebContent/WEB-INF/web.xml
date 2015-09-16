@@ -4,16 +4,29 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-    <servlet-name>HPServlet</servlet-name>
+    <servlet-name>GamePageServlet</servlet-name>
     <servlet-class>com.demboyz.monopoly.web.GamePageServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-    <servlet-name>HPServlet</servlet-name>
+    <servlet-name>GamePageServlet</servlet-name>
     <url-pattern>/play</url-pattern>
   </servlet-mapping>
   
+  
+  <servlet>
+    <servlet-name>ResultsPageServlet</servlet-name>
+    <servlet-class>com.demboyz.monopoly.web.ResultsPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResultsPageServlet</servlet-name>
+    <url-pattern>/results</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>GameRunnerServlet</servlet-name>
+  	<servlet-class>com.demboyz.monopoly.web.GameRunnerServlet</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
   
 </web-app>
