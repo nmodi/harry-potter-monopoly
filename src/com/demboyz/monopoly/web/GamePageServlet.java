@@ -39,7 +39,7 @@ public class GamePageServlet extends HttpServlet {
 		
 		
 		
-		getServletContext().getRequestDispatcher("GameRunnerServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/runner").forward(request, response);
 		
 		
 		out.flush(); 

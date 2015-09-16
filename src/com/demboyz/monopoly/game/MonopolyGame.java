@@ -25,10 +25,6 @@ public class MonopolyGame {
 	}
 	
 	
-	public static void main(){
-		
-	}
-	
 	
 	public void initPlayers(){
 		players = new ArrayList<Player>(); 

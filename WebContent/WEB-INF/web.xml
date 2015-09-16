@@ -35,7 +35,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>GameRunnerServlet</servlet-name>
-		<url-pattern>/gamerunner</url-pattern>
+		<url-pattern>/runner</url-pattern>
 	</servlet-mapping>
 
 </web-app>
