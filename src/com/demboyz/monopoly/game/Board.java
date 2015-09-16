@@ -15,7 +15,7 @@ public class Board {
 	private ArrayList<Space> spaces; 
 	private ArrayList<Token> tokens; 
 	private HashSet<Card> cards; 
-	public int TOTAL_NUM_OF_SPACES; 
+	public static int TOTAL_NUM_OF_SPACES; 
 	public static int DETENTION_SPACE_INDEX;
 	public static int GO_SPACE_INDEX;
 	public static int ROOM_OF_REQUIREMENT_SPACE_INDEX;
