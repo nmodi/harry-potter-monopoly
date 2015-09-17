@@ -26,7 +26,15 @@ public class Player {
 		setDetentionStatus(false);
 	}
 	
-
+	// When a player lands on a property space, he/she will automatically buy the property (if he/she has sufficient points)
+	public void buyProperty(PropertySpace property){
+		points -= property.getPrice();
+	}
+	
+	// When a player lands on a property space that is owned, he/she will automatically pay rent (if he/she has sufficient points)
+	public void payBaseRent(PropertySpace property){
+		points -= property.getBaseRent();
+	}
 
 
 	public void tryToBreakOutOfDetention(){
