@@ -19,6 +19,7 @@ public class MonopolyGame {
 	static String SPACES_JSON = "spaces.json"; 
 
 	private ArrayList<Player> players; 
+	private ArrayList<Card> cards;
 	private Die die; 
 	
 	private Board board; 
@@ -34,10 +35,28 @@ public class MonopolyGame {
 	}
 	
 	private MonopolyGame() {
+		Player hogwarts = new Player("Hogwarts");
 		die = new Die(); 
 		initPlayers(); 
+		playGame();
 		}
 	
+	private void playGame() {
+		for(Player p : players){
+			int[] dieValues = die.roll();
+			int rollValue = dieValues[0] + dieValues[1];
+			p.setCurrentSpaceIndex(p.getCurrentSpaceIndex() + rollValue);
+			Space currentSpace = board.getSpaces().get(p.currentSpaceIndex);
+			if(currentSpace.getColor().equals("white")){
+				
+			}
+			else if(currentSpace.getColor().equals("purple")){
+				p.drawCard(Board.getCards().);
+			}
+		}
+		
+	}
+
 	public GameState getGameState(){
 		return new GameState(players, board, gameWon); 		
 	}
