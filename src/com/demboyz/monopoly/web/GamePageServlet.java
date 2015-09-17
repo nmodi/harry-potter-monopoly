@@ -31,7 +31,7 @@ public class GamePageServlet extends HttpServlet {
 		out.println("<h1>Play!</h1>");
 				
 		
-		request.setAttribute("sender", "gamePageServlet");	
+//		request.setAttribute("sender", "gamePageServlet");	
 		getServletContext().getRequestDispatcher("/runner").include(request, response);
 
 //		String ooga = request.getAttribute("returnString").toString();
