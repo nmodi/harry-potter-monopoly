@@ -47,11 +47,26 @@ public class MonopolyGame {
 			int rollValue = dieValues[0] + dieValues[1];
 			p.setCurrentSpaceIndex(p.getCurrentSpaceIndex() + rollValue);
 			Space currentSpace = board.getSpaces().get(p.currentSpaceIndex);
+			
+			// If the player lands on a white space, he/she gets 50 house points
 			if(currentSpace.getColor().equals("white")){
+				if(p.getCurrentSpaceIndex() == board.GO_SPACE_INDEX){
+					p.setPoints(p.points + 50);
+				}
+			}
+			
+			// If the player lands on a purple space, he/she draws a card
+			else if(currentSpace.getColor().equals("purple")){
+
+				p.drawCard(board.getCards().get(0));
+				Card shuffledCard = board.getCards().remove(0);
+				board.getCards().add(shuffledCard);
+			}
+			
+			else if(currentSpace.getColor().equals("")){
 				
 			}
-			else if(currentSpace.getColor().equals("purple")){
-			}
+			
 		}
 		
 	}
