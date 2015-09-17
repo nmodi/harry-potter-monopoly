@@ -32,4 +32,12 @@ public class PropertySpace extends Space {
 	public void setPrice(int rent){
 		this.price = rent * 4; 
 	}
+	
+	public int getBaseRent(){
+		return baseRent;
+	}
+	
+	public int getPrice(){
+		return price;
+	}
 }

@@ -9,11 +9,18 @@ public class Player {
 	String name; 
 	String house; 
 	int points; 
-	int breakOutOfDetentionAttemptsCount;
-	int doublesCount;
-	int currentSpaceIndex;
-	boolean detentionStatus;
+	int breakOutOfDetentionAttemptsCount = 0;
+	int doublesCount = 0;
+	int currentSpaceIndex = 0;
+	boolean detentionStatus = false;
+	boolean hasGetOutOfDetentionCard = false;
 	ArrayList<PropertySpace> properties;
+	
+	public Player(String playerName){
+		name = playerName;
+		house = null;
+		points = 100000;
+	}
 	
 	public Player(JSONObject jsonObject){
 		String name = jsonObject.get("name").toString();
@@ -26,7 +33,55 @@ public class Player {
 		setDetentionStatus(false);
 	}
 	
-
+	public void passGo(){
+		if(getCurrentSpaceIndex() == Board.GO_SPACE_INDEX){
+			points += 50;
+		}
+	}
+	
+	
+	// When a player lands on a property space, he/she will automatically buy the property (if he/she has sufficient points)
+	public void buyProperty(PropertySpace property){
+		if(getPoints() > property.getPrice()){
+			points -= property.getPrice();
+		}
+		else{
+			// declare bankruptcy
+		}
+	}
+	
+	// When a player lands on a property space that is owned, he/she will automatically pay rent (if he/she has sufficient points)
+	public void payBaseRent(PropertySpace property){
+		points -= property.getBaseRent();
+	}
+	
+	public void drawCard(Card drawnCard){
+		if(drawnCard.getType().equals("gain")){
+			points += drawnCard.pointValue;
+		}
+		
+		else if(drawnCard.getType().equals("lose")){
+			points -= drawnCard.pointValue;
+		}
+		else if(drawnCard.getType().equals("jail")){
+			setDetentionStatus(true);
+			setCurrentSpaceIndex(Board.DETENTION_SPACE_INDEX);
+		}
+		
+		else if(drawnCard.getType().equals("free")){
+			setHasGetOutOfDetentionCard(true);
+		}
+	}
+	
+	public void goToDetention(){
+		if(getHasGetOutOfDetentionCard() == false){
+			setDetentionStatus(true);
+			setCurrentSpaceIndex(Board.DETENTION_SPACE_INDEX);
+		}
+		else if(getHasGetOutOfDetentionCard() == true){
+			setHasGetOutOfDetentionCard(false);
+		}
+	}
 
 
 	public void tryToBreakOutOfDetention(){
@@ -54,9 +109,15 @@ public class Player {
 	public void setCurrentSpaceIndex(int i) { this.currentSpaceIndex = i % Board.TOTAL_NUM_OF_SPACES; }
 	public void setDoublesCount(int i) {this.doublesCount = i; }
 	public void setHouse(String house) { this.house = house; }
+	public void setHasGetOutOfDetentionCard(boolean b) { this.hasGetOutOfDetentionCard = b;}
+	
+	
 	public String getName() { return name; }
 	public String getHouse() { return house; }
+	public int getPoints() { return points; }
+	public int getCurrentSpaceIndex() { return currentSpaceIndex; }
 	public boolean getDetentionStatus() { return detentionStatus; }
 	public ArrayList<PropertySpace> getProperties() { return properties; }
 	public int getDoublesCount() { return doublesCount; }
+	public boolean getHasGetOutOfDetentionCard(){ return hasGetOutOfDetentionCard; }
 }

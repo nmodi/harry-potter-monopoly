@@ -32,11 +32,6 @@ public class BoardTest {
 		assertNotNull(board.getCards()); 
 	}
 	
-	@Test
-	public void testBoardHasTokens() {
-		assertNotNull(board.getTokens()); 
-	}
-	
 	@Test 
 	public void testMultipleCardsInitialized(){
 		assertNotEquals(0, board.getCards().size());

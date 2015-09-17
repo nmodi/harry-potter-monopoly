@@ -49,7 +49,7 @@ public class GameRunnerServlet extends HttpServlet {
 			
 		} else if (param.equals("personal")){
 			for (Player p : currentState.getPlayers()){
-				sb.append(p.getp); 
+				
 			}
 		} else if (param.equals("won")) {
 			

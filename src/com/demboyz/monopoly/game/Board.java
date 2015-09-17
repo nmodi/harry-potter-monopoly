@@ -13,8 +13,7 @@ import org.json.simple.parser.ParseException;
 
 public class Board {
 	private ArrayList<Space> spaces; 
-	private ArrayList<Token> tokens; 
-	private HashSet<Card> cards; 
+	private ArrayList<Card> cards; 
 	public static int TOTAL_NUM_OF_SPACES; 
 	public static int DETENTION_SPACE_INDEX;
 	public static int GO_SPACE_INDEX;
@@ -23,8 +22,7 @@ public class Board {
 
 	public Board(){
 		initSpaces();
-		initCards(); 
-		initTokens(); 
+		initCards();
 	}
 
 	public void initSpaces(){
@@ -86,7 +84,7 @@ public class Board {
 	}
 
 	public void initCards(){
-		cards = new HashSet<Card>(); 
+		cards = new ArrayList<Card>(); 
 
 		JSONParser parser = new JSONParser();
 
@@ -108,11 +106,7 @@ public class Board {
 
 	}
 
-	public void initTokens(){
-		tokens = new ArrayList<Token>(); 
-	}
 
 	public ArrayList<Space> getSpaces(){ return spaces; }
-	public HashSet<Card> getCards(){ return cards; }
-	public ArrayList<Token> getTokens(){ return tokens; } 
+	public ArrayList<Card> getCards(){ return cards; }
 }
