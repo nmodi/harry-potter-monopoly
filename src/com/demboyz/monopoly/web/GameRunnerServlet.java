@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.demboyz.monopoly.game.Die;
 import com.demboyz.monopoly.game.MonopolyGame;
+import com.demboyz.monopoly.game.Player;
 
 /**
  * Servlet implementation class GameRunnerServlet
@@ -23,7 +24,7 @@ public class GameRunnerServlet extends HttpServlet {
     public void init() throws ServletException {
     	super.init();    	
 
-		// game = new MonopolyGame();
+		game = new MonopolyGame();
 }
 
 	/**
@@ -33,7 +34,7 @@ public class GameRunnerServlet extends HttpServlet {
 		PrintWriter out = response.getWriter(); 
 		response.setContentType("text/html"); 
 		
-//		String sender = request.getAttribute("sender").toString(); 
+//		String sender = request.getParameter("sender").toString(); 
 		
 		out.println("<p>before the if statement</p>");
 		
@@ -46,6 +47,13 @@ public class GameRunnerServlet extends HttpServlet {
 			String clientName = (String) request.getParameter("playerName");
 			
 			
+			out.println("<p>");
+			for (Player p : game.getPlayers()){
+				p.getName(); 
+				out.println(p.getName()); 
+			}
+			
+			out.println("</p>"); 
 			
 			
 			out.println("<p>" + clientName + " of House " + clientHouse + "</p>");
