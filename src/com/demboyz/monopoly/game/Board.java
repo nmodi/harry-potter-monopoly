@@ -84,7 +84,7 @@ public class Board {
 	}
 
 	public void initCards(){
-		cards = new HashSet<Card>(); 
+		cards = new ArrayList<Card>(); 
 
 		JSONParser parser = new JSONParser();
 
