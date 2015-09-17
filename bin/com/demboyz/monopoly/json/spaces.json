@@ -1,0 +1,214 @@
+{  
+   "spaces":[  
+      {  
+         "name":"Go",
+         "color":"white",
+         "type":"go"
+      },
+      {  
+         "name":"Ollivander's",
+         "color":"black",
+         "type":"property"
+      },
+      {  
+         "name":"Gringott's",
+         "color":"black",
+         "type":"property"
+      },
+      {  
+         "name":"Weasley's Wizard Wheezes",
+         "color":"black",
+         "type":"property"
+      },
+      {  
+         "name":"Draw a Card",
+         "color":"purple",
+         "type":"card"
+      },
+      {  
+         "name":"Hogwarts Express",
+         "color":"gray",
+         "type":"rr"
+      },
+      {  
+         "name":"Marauder's Map",
+         "color":"brown",
+         "type":"util"
+      },
+      {  
+         "name":"Hufflepuff Common Room",
+         "color":"yellow",
+         "type":"property"
+      },
+      {  
+         "name":"Helga Hufflepuff's Chalice",
+         "color":"yellow",
+         "type":"property"
+      },
+      {  
+         "name":"Herbology Class",
+         "color":"yellow",
+         "type":"property"
+      },
+      {  
+         "name":"Detention",
+         "color":"white",
+         "type":"jail"
+      },
+      {  
+         "name":"Quidditch Pitch",
+         "color":"bronze",
+         "type":"property"
+      },
+      {  
+         "name":"Hagrid's Hut",
+         "color":"bronze",
+         "type":"property"
+      },
+      {  
+         "name":"Forbidden Forest",
+         "color":"bronze",
+         "type":"property"
+      },
+      {  
+         "name":"Whomping Willow",
+         "color":"bronze",
+         "type":"property"
+      },
+      {  
+         "name":"Draw a Card",
+         "color":"purple",
+         "type":"card"
+      },
+      {  
+         "name":"Flying Car",
+         "color":"gray",
+         "type":"rr"
+      },
+      {  
+         "name":"Ravenclaw Common Room",
+         "color":"blue",
+         "type":"property"
+      },
+      {  
+         "name":"Rowena Ravenclaw's Diadem",
+         "color":"blue",
+         "type":"property"
+      },
+      {  
+         "name":"Charms Class",
+         "color":"blue",
+         "type":"property"
+      },
+      {  
+         "name":"Room of Requirement",
+         "color":"white",
+         "type":"free_parking"
+      },
+      {  
+         "name":"The Three Broomsticks",
+         "color":"silver",
+         "type":"property"
+      },
+      {  
+         "name":"The Hog's Head",
+         "color":"silver",
+         "type":"property"
+      },
+      {  
+         "name":"The Shrieking Shack",
+         "color":"silver",
+         "type":"property"
+      },
+      {  
+         "name":"Draw a Card",
+         "color":"purple",
+         "type":"card"
+      },
+      {  
+         "name":"Floo Powder",
+         "color":"gray",
+         "type":"rr"
+      },
+      {  
+         "name":"Invisibility Cloak",
+         "color":"brown",
+         "type":"util"
+      },
+      {  
+         "name":"Slytherin Common Room",
+         "color":"green",
+         "type":"property"
+      },
+      {  
+         "name":"The Chamber of Secrets",
+         "color":"green",
+         "type":"property"
+      },
+      {  
+         "name":"The Basilisk",
+         "color":"green",
+         "type":"property"
+      },
+      {  
+         "name":"Potions Class",
+         "color":"green",
+         "type":"property"
+      },
+      {  
+         "name":"3rd Floor Corridor",
+         "color":"white",
+         "type":"go_to_jail"
+      },
+      {  
+         "name":"The Great Hall",
+         "color":"gold",
+         "type":"property"
+      },
+      {  
+         "name":"Astronomy Tower",
+         "color":"gold",
+         "type":"property"
+      },
+      {  
+         "name":"Library",
+         "color":"gold",
+         "type":"property"
+      },
+      {  
+         "name":"Dumbledore's Office",
+         "color":"gold",
+         "type":"property"
+      },
+      {  
+         "name":"Draw a Card",
+         "color":"purple",
+         "type":"card"
+      },
+      {  
+         "name":"Hippogriff",
+         "color":"gray",
+         "type":"rr"
+      },
+      {  
+         "name":"Gryffindor Common Room",
+         "color":"red",
+         "type":"property"
+      },
+      {  
+         "name":"Fawkes the Phoenix",
+         "color":"red",
+         "type":"property"
+      },
+      {  
+         "name":"Transfiguration",
+         "color":"red",
+         "type":"property"
+      },
+      {  
+         "name":"Sword of Godric Gryffindor",
+         "color":"red",
+         "type":"property"
+      }
+   ]
+}

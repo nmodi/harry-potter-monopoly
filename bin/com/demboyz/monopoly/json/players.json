@@ -1,0 +1,9 @@
+{
+	"players": 
+	[
+		{ "name": "Cedric Diggory", "house": "hufflepuff" }, 
+		{ "name": "Cho Chang", "house": "ravenclaw" }, 
+		{ "name": "Ron Weasley", "house": "gryffindor" }, 
+		{ "name": "Draco Malfoy", "house": "slytherin" }
+	]
+}

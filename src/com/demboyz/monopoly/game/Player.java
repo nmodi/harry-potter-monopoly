@@ -18,10 +18,17 @@ public class Player {
 	public Player(JSONObject jsonObject){
 		String name = jsonObject.get("name").toString();
 		setName(name);
+		
+		String house = jsonObject.get("house").toString(); 
+		setHouse(house); 
+		
 		setPoints(DEFAULT_STARTING_POINTS);
 		setDetentionStatus(false);
 	}
 	
+
+
+
 	public void tryToBreakOutOfDetention(){
 		Die die = new Die();
 		int dieValueSum;
@@ -46,6 +53,7 @@ public class Player {
 	public void setDetentionStatus(boolean b) { this.detentionStatus = b; }
 	public void setCurrentSpaceIndex(int i) { this.currentSpaceIndex = i % Board.TOTAL_NUM_OF_SPACES; }
 	public void setDoublesCount(int i) {this.doublesCount = i; }
+	public void setHouse(String house) { this.house = house; }
 	public String getName() { return name; }
 	public String getHouse() { return house; }
 	public boolean getDetentionStatus() { return detentionStatus; }

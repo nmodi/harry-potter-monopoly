@@ -13,7 +13,7 @@ public class GameTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		monopolyGame = new MonopolyGame(); 
+		monopolyGame = MonopolyGame.getInstance(); 
 	}
 
 	@Test

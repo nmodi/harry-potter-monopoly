@@ -7,7 +7,7 @@ function goBack() {
 }
 </script>
 <h1>Game Setup</h1>
-<p class="lead">Please select your options:</p>
+<h4>Please select your options:</h4>
 
 <form action="play" class="form-horizontal">
 
@@ -54,6 +54,10 @@ function goBack() {
 			<button type="submit" class="btn btn-primary">Start game!</button>
 		</div>
 	</div>
+	
+	
+<input type="hidden" name="intent" value="options">
+	
 </form>
 
 

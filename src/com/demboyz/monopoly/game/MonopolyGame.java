@@ -1,12 +1,8 @@
 package com.demboyz.monopoly.game;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,25 +17,35 @@ public class MonopolyGame {
 	static String PLAYERS_JSON = "players.json"; 
 	static String CARDS_JSON = "cards.json"; 
 	static String SPACES_JSON = "spaces.json"; 
+
+	private ArrayList<Player> players; 
+	private Die die; 
 	
-	List<Player> players; 
-	Die die; 
+	private Board board; 
 	
-	public MonopolyGame(){
+	private boolean gameWon = false; 
+	
+
+	private static final MonopolyGame instance = new MonopolyGame(); 
+	
+		
+	public static MonopolyGame getInstance() { 
+		return instance; 
+	}
+	
+	private MonopolyGame() {
 		die = new Die(); 
 		initPlayers(); 
+		}
+	
+	public GameState getGameState(){
+		return new GameState(players, board, gameWon); 		
 	}
 	
-	public MonopolyGame(String userHouse, String userName) throws FileNotFoundException, UnsupportedEncodingException{
-		new MonopolyGame();
+	public void resetGame() { 
 		
-		// iterate through players 
-		// remove premade player with given house 
-		// add new player with same house 
 	}
-	
-	
-	
+
 	public void initPlayers(){
 		players = new ArrayList<Player>(); 
 		JSONParser parser = new JSONParser(); 
@@ -54,16 +60,24 @@ public class MonopolyGame {
 			while(iterator.hasNext()){
 				players.add(new Player(iterator.next())); 
 			} 
-			} catch (IOException | ParseException e){
-				e.printStackTrace();
+		} catch (IOException | ParseException e){
+			e.printStackTrace();
 		}
 	}
-	
+
+	public void replacePlayer(String house, String name){
+		for (Player p : getPlayers()){
+			if (p.getHouse().equals(house)){
+				p.setName(name);
+			}
+		}
+	}
+
 	public String getTestString(){
 		return "this is a test string from the monopoly game!";
 	}
-	
-	
+
+
 	public List<Player> getPlayers(){ return players; } 
 	public Die getDie(){ return die; } 
 
