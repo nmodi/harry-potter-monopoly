@@ -1,15 +1,13 @@
 <%@include file="header_fragment.html" %>
-		<h1>Welcome!</h1>
-		<h2>Please select an option:</h2>
-		<div>
-			<p>
-				Play Harry Potter Monopoly <a href="options.jsp">here</a>!
-			</p>
-			<p>
-				Watch a game played without you <a href="play">here</a>!
-			</p>
-			<p>
-				View results of the last game <a href="results">here</a>!
-			</p>
-		</div>
+<h1>Welcome!</h1>
+<p class="lead">How do you want to play today?</p>
+
+
+
+
+<a href="options.jsp" class="btn btn-primary btn-lg" role="button">Set up new game</a>
+<a href="play" class="btn btn-default btn-lg" role="button">Spectate</a>
+<!-- <a href="results" class="btn btn-default" role="button">View prior game results</a> -->
+		
+		
 <%@include file="footer_fragment.html" %>

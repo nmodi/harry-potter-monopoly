@@ -1,0 +1,7 @@
+.jumbotron {
+	background-color: #999; 
+	 background-image: url(../img/hogwarts.jpg); 
+	 min-height: 200px; 
+	 color: #efefef;
+	  text-shadow: 2px 2px #000;
+	}

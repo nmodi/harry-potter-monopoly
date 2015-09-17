@@ -35,39 +35,13 @@ public class GameRunnerServlet extends HttpServlet {
 		response.setContentType("text/html"); 
 		
 //		String sender = request.getParameter("sender").toString(); 
-		
-		out.println("<p>before the if statement</p>");
-		
-//		if (sender.equals("gamePageServlet")){
-			
-			// verify that the game has been created
-			// start the game using parameters from request 
-
+/*
+ *  Check how to store parameters in the request or response objs
+ */
 			String clientHouse = (String) request.getParameter("house");
 			String clientName = (String) request.getParameter("playerName");
 			
 			
-			out.println("<p>");
-			for (Player p : game.getPlayers()){
-				p.getName(); 
-				out.println(p.getName()); 
-			}
-			
-			out.println("</p>"); 
-			
-			
-			out.println("<p>" + clientName + " of House " + clientHouse + "</p>");
-			
-		//	request.setAttribute("returnString", game.getTestString());
-//		} else if (sender.equals("feed.jsp")){
-//
-//			out.println("<p>in the 2nd if statement</p>");
-//			// retrieve game.getGameState()
-//			// send game state to feed.jsp 
-//		}
-//		
-		out.println("<p>after the ifs</p>");
-
 		out.flush();
 	}
 
