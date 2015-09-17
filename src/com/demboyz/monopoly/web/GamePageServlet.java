@@ -9,7 +9,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse; 
+import javax.servlet.http.HttpServletResponse;
+
+import com.demboyz.monopoly.game.MonopolyGame; 
 
 /**
  * Servlet implementation class HarryPotterMonopolyServlet
@@ -27,9 +29,11 @@ public class GamePageServlet extends HttpServlet {
 		response.setContentType("text/html"); 
 		getServletContext().getRequestDispatcher("/header_fragment.html").include(request, response);
 		
+		String heading1; 
+		
+
 		String intent = request.getParameter("intent");
 		
-		String heading1; 
 		
 		if (intent.equals("options")){
 			heading1 = "Play!";
@@ -40,9 +44,16 @@ public class GamePageServlet extends HttpServlet {
 		}
 		
 		out.println("<h1>" + heading1 + "</h1>");
-				
 		
-		getServletContext().getRequestDispatcher("/runner").include(request, response);
+		MonopolyGame game = MonopolyGame.getInstance(); 
+
+		String clientHouse = request.getParameter("house"); 
+		String clientName = request.getParameter("playerName"); 
+		
+		if (clientName.equals("")){
+			clientName = "Harry Potter"; 
+		}	
+		game.replacePlayer(clientHouse, clientName); 
 
 		
 		getServletContext().getRequestDispatcher("/feed.jsp").include(request, response);

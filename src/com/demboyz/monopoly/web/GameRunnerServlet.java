@@ -1,7 +1,6 @@
 package com.demboyz.monopoly.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.demboyz.monopoly.game.GameState;
+
+import com.demboyz.monopoly.game.Player;
 import com.demboyz.monopoly.game.MonopolyGame;
 
 /**
@@ -27,32 +28,39 @@ public class GameRunnerServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter(); 
-		response.setContentType("text/html"); 
+		MonopolyGame game = MonopolyGame.getInstance();
+		GameState currentState = game.getGameState(); 
 		
-		MonopolyGame game = MonopolyGame.getInstance(); 
-		String intent = request.getParameter("intent");
-		if (intent.equals("options")){
-			String clientHouse = request.getParameter("house"); 
-			String clientName = request.getParameter("playerName"); 
+		StringBuilder sb = new StringBuilder(); 
+		
+		
+		String param = request.getParameter("reqType");
+		
+		
+		if (param.equals("names")){
+			for (Player p : currentState.getPlayers()){
+				sb.append(p.getName());
+				sb.append(","); 
+				sb.append(p.getHouse()); 
+				sb.append(","); 
+			}
+		} else if (param.equals("property")) {
+		
 			
-			if (clientName.equals("")){
-				clientName = "Harry Potter"; 
-			}	
-			game.replacePlayer(clientHouse, clientName); 
-		} else if (intent.equals("feed")) {
-			out.println("<p> Sender was feed.</p>");	
-			GameState state = game.getGameState(); 
+		} else if (param.equals("personal")){
+			for (Player p : currentState.getPlayers()){
+				sb.append(p.getp); 
+			}
+		} else if (param.equals("won")) {
 			
-			request.getSession().setAttribute("state", state);
-			getServletContext().setAttribute("state", state);
-			
-		} else if (intent.equals("watch")){
-			out.println("<h2>watch a game here</h2>"); 			
-		} else {
-			out.println("<h1><a href=\"..\\playhp\\\">GO BACK HOME</a></h1>"); 						
 		}
-		out.flush();
+		
+		
+		String state = sb.toString(); 
+		
+        response.setContentType("text/plain");
+        response.getWriter().write(state);
+    
 	}
 
 	/**

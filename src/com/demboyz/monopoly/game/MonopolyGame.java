@@ -39,6 +39,7 @@ public class MonopolyGame {
 		}
 	
 	public GameState getGameState(){
+//			return "got game state from game"; 
 		return new GameState(players, board, gameWon); 		
 	}
 	

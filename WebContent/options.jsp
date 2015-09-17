@@ -35,21 +35,6 @@ function goBack() {
 
 
 	<div class="form-group">
-		<label for="freqDropdown" class="control-label col-sm-2">Update
-			Frequency:</label>
-		<div class="col-sm-10">
-			<select name="updateFrequency" id="freqDropdown" class="form-control">
-				<option value="5">5 seconds</option>
-				<option value="10">10 seconds</option>
-				<option value="20">20 seconds</option>
-				<option value="30">30 seconds</option>
-			</select>
-		</div>
-	</div>
-
-
-
-	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
 			<button type="submit" class="btn btn-primary">Start game!</button>
 		</div>
