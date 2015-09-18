@@ -2,6 +2,8 @@ package com.demboyz.monopoly.game;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -31,7 +33,11 @@ public class Board {
 		JSONParser parser = new JSONParser();
 
 		try {
-			Object obj = parser.parse(new FileReader(MonopolyGame.SPACES_JSON));
+			InputStream input = Thread.currentThread().getContextClassLoader()
+					.getResourceAsStream(MonopolyGame.jsonFilePath + MonopolyGame.SPACES_JSON);
+			InputStreamReader streamReader = new InputStreamReader(input); 	
+			
+			Object obj = parser.parse(streamReader);
 			JSONObject jsonObj = (JSONObject) obj;
 
 			JSONArray jsonSpaceArray = (JSONArray) jsonObj.get("spaces");
@@ -89,7 +95,11 @@ public class Board {
 		JSONParser parser = new JSONParser();
 
 		try {
-			Object obj = parser.parse(new FileReader(MonopolyGame.CARDS_JSON));
+			InputStream input = Thread.currentThread().getContextClassLoader()
+					.getResourceAsStream(MonopolyGame.jsonFilePath + MonopolyGame.CARDS_JSON);
+			InputStreamReader streamReader = new InputStreamReader(input); 	
+			
+			Object obj = parser.parse(streamReader);
 			JSONObject jsonObj = (JSONObject) obj;
 
 			JSONArray jsonCardArray = (JSONArray) jsonObj.get("cards");

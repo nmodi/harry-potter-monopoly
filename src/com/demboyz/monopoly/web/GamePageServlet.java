@@ -54,13 +54,16 @@ public class GamePageServlet extends HttpServlet {
 			clientName = "Harry Potter"; 
 		}	
 		game.replacePlayer(clientHouse, clientName); 
+		
 
 		
 		getServletContext().getRequestDispatcher("/feed.jsp").include(request, response);
 		
 		
 
-		out.println("<p><a href=\"results\">CLICK HERE TO VIEW RESULTS (temporary link, will eventually be a redirect)</a></p>");
+		out.println("<div class=\"pull-right\"> <a href=\"results\" class=\"btn btn-primary btn-lg\">Results >></a><//div>");
+		
+		
 		getServletContext().getRequestDispatcher("/footer_fragment.html").include(request, response);
 		out.flush(); 
 		out.close();

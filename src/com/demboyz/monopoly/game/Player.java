@@ -11,15 +11,19 @@ public class Player {
 	int points; 
 	int breakOutOfDetentionAttemptsCount = 0;
 	int doublesCount = 0;
-	int currentSpaceIndex = 0;
+	int currentSpaceIndex;
 	boolean detentionStatus = false;
 	boolean hasGetOutOfDetentionCard = false;
 	ArrayList<PropertySpace> properties;
+	
+	boolean wonGame = false; 
 	
 	public Player(String playerName){
 		name = playerName;
 		house = null;
 		points = 100000;
+
+		setCurrentSpaceIndex(0);
 	}
 	
 	public Player(JSONObject jsonObject){
@@ -31,6 +35,8 @@ public class Player {
 		
 		setPoints(DEFAULT_STARTING_POINTS);
 		setDetentionStatus(false);
+		
+		setCurrentSpaceIndex(0);
 	}
 	
 	public void passGo(){
@@ -106,7 +112,7 @@ public class Player {
 	public void setName(String name) { this.name = name; }
 	public void setPoints(int points) { this.points = points; }
 	public void setDetentionStatus(boolean b) { this.detentionStatus = b; }
-	public void setCurrentSpaceIndex(int i) { this.currentSpaceIndex = i % Board.TOTAL_NUM_OF_SPACES; }
+	public void setCurrentSpaceIndex(int i) { this.currentSpaceIndex = i % Board.TOTAL_NUM_OF_SPACES ; }
 	public void setDoublesCount(int i) {this.doublesCount = i; }
 	public void setHouse(String house) { this.house = house; }
 	public void setHasGetOutOfDetentionCard(boolean b) { this.hasGetOutOfDetentionCard = b;}
